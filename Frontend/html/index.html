@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketeros - Dashboard</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Marketeros</h2>
+            </div>
+            <div class="nav-user">
+                <span id="userName">Cargando...</span>
+                <div class="user-stats">
+                    <span id="likesGiven">0</span>/5 likes dados
+                </div>
+                <button id="logoutBtn" class="btn-secondary">Cerrar Sesión</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="dashboard-header">
+            <h1>Comunidad de Marketeros</h1>
+            <p>Conoce a los mejores profesionales del marketing</p>
+            
+            <div class="stats-container">
+                <div class="stat-card">
+                    <h3 id="totalMembers">0</h3>
+                    <p>Miembros</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="myLikes">0</h3>
+                    <p>Likes recibidos</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="remainingLikes">5</h3>
+                    <p>Likes restantes</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="filters-section">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="liked">Mis Likes</button>
+                <button class="filter-btn" data-filter="top">Top Ranking</button>
+            </div>
+            
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Buscar marketeros...">
+            </div>
+        </div>
+
+        <div class="marketers-grid" id="marketersGrid">
+            <!-- Los perfiles se cargarán dinámicamente -->
+        </div>
+        
+        <div class="loading" id="loadingIndicator">
+            <div class="spinner"></div>
+            <p>Cargando marketeros...</p>
+        </div>
+    </main>
+
+    <div class="modal" id="profileModal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <div class="modal-body">
+                <div class="profile-header">
+                    <img id="modalAvatar" src="" alt="Avatar">
+                    <div class="profile-info">
+                        <h2 id="modalName"></h2>
+                        <p id="modalEmail"></p>
+                        <div class="profile-stats">
+                            <span id="modalLikes">0 likes</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-bio">
+                    <h3>Sobre mí</h3>
+                    <p id="modalBio"></p>
+                </div>
+                <div class="profile-actions">
+                    <button id="modalLikeBtn" class="btn-primary">
+                        ❤️ Dar Like
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../css/main.js"></script>
+    <script src="../css/like.js"></script>
+    <script src="../css/auth.js"></script>
+</body>
+</html>

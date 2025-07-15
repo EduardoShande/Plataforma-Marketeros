@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketeros - Registro</title>
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <div class="logo">
+                <h1>Marketeros</h1>
+                <p>Registro Exclusivo</p>
+            </div>
+            
+            <form id="registerForm" class="login-form">
+                <div class="form-group">
+                    <label for="invitationCode">Código de Invitación</label>
+                    <input type="text" id="invitationCode" name="invitationCode" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="firstName">Nombre</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="lastName">Apellido</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirmPassword">Confirmar Contraseña</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="bio">Descripción profesional</label>
+                    <textarea id="bio" name="bio" rows="3" placeholder="Cuéntanos sobre tu experiencia en marketing..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="avatar">Foto de perfil</label>
+                    <input type="file" id="avatar" name="avatar" accept="image/*">
+                </div>
+                
+                <button type="submit" class="btn-primary" id="registerBtn">
+                    Registrarse
+                </button>
+            </form>
+            
+            <div class="register-link">
+                <p>¿Ya tienes cuenta? <a href="login.html">Iniciar Sesión</a></p>
+            </div>
+            
+            <div id="errorMessage" class="error-message"></div>
+        </div>
+    </div>
+    
+    <script src="../css/auth.js"></script>
+</body>
+</html>

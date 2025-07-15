@@ -1,0 +1,193 @@
+/* Dashboard específico - Grid de marketeros */
+.marketers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.marketer-card {
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.marketer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.marketer-card.liked {
+    border: 2px solid #667eea;
+}
+
+.marketer-card.liked::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+}
+
+.marketer-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.marketer-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #f0f0f0;
+    transition: all 0.3s ease;
+}
+
+.marketer-card:hover .marketer-avatar {
+    border-color: #667eea;
+}
+
+.marketer-info h3 {
+    color: #333;
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+}
+
+.marketer-info p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.marketer-bio {
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    display: -webkit-box;
+    /* -webkit-line-clamp: 3; */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.marketer-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.likes-count {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #667eea;
+    font-weight: 600;
+}
+
+.likes-count::before {
+    content: '❤️';
+    font-size: 1.2rem;
+}
+
+.rank-badge {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.rank-badge.gold {
+    background: linear-gradient(45deg, #f39c12, #e67e22);
+}
+
+.rank-badge.silver {
+    background: linear-gradient(45deg, #95a5a6, #7f8c8d);
+}
+
+.rank-badge.bronze {
+    background: linear-gradient(45deg, #d35400, #c0392b);
+}
+
+.marketer-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.like-btn {
+    flex: 1;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.like-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+.like-btn:disabled {
+    background: #ddd;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.like-btn:disabled:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.like-btn.liked {
+    background: #e74c3c;
+}
+
+.like-btn.liked::before {
+    content: '❤️';
+}
+
+.like-btn.disabled {
+    background: #bdc3c7;
+    color: #7f8c8d;
+}
+
+.view-btn {
+    padding: 10px 15px;
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.view-btn:hover {
+    background: #e9ecef;
+}
+
+/* Estados especiales */
+.marketer-card.own-profile {
+    opacity: 0.7;
+    background: #f8f9fa;
+}
+
+.marketer-card.own-profile .like-btn {
+    background: #bdc3c7;
+    cursor: not-allowed;
+}
